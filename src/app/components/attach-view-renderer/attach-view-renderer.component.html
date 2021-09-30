@@ -1,0 +1,32 @@
+<div class="actions">
+  <nz-upload
+    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    [nzHeaders]="{ authorization: 'authorization-text' }"
+    (nzChange)="handleChange($event)"
+    [nzShowUploadList]="false"
+  >
+    <button
+      nz-button
+      nzType="text"
+      nzSize="small"
+      class="mr-1"
+      nzTooltipTitle="Add attachment"
+      nzTooltipPlacement="top"
+      nz-tooltip
+    >
+      <i nz-icon nzType="paper-clip" nzTheme="outline"></i>
+    </button>
+  </nz-upload>
+  <button
+    nz-button
+    nzType="text"
+    (click)="btnClickedHandler($event)"
+    nzSize="small"
+    class="mr-1"
+    nzTooltipTitle="View"
+    nzTooltipPlacement="top"
+    nz-tooltip
+  >
+    <i nz-icon nzType="eye" nzTheme="fill"></i>
+  </button>
+</div>

@@ -30,17 +30,15 @@ export class EditDeleteRendererComponent
     private modal: NzModalService,
     private notification: NzNotificationService
   ) {}
-  btnClickedHandler(ev: Event) {
+  btnEditClickHandler(ev: Event) {
+    this.record = {};
     this._getRecord(this.params.value);
-    // this.params.clicked(this.params.value);
     this.isEditVisible = true;
-  }
-  btnClickedHandler2(ev: Event) {
-    this.params.clicked(this.params.value);
   }
 
   handleEditCancel() {
     this.isEditVisible = false;
+    this.record = {};
   }
 
   handleEditSave() {
@@ -74,7 +72,7 @@ export class EditDeleteRendererComponent
   }
 
   private _getRecord(id: number) {
-    this.record = this._data.getRecord(id);
+    this.record = { ...this._data.getRecord(id) };
   }
 
   private _showError(type: string) {
